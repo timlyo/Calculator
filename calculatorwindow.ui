@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>625</width>
-    <height>352</height>
+    <width>658</width>
+    <height>414</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -36,6 +36,20 @@
     <locale language="English" country="UnitedKingdom"/>
    </property>
    <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="1">
+     <widget class="QPushButton" name="saveMemory">
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1">
+     <widget class="QPushButton" name="clearMemory">
+      <property name="text">
+       <string>Clear Memory</string>
+      </property>
+     </widget>
+    </item>
     <item row="1" column="0">
      <widget class="QLineEdit" name="inputBox">
       <property name="sizePolicy">
@@ -103,7 +117,7 @@
       </property>
      </widget>
     </item>
-    <item row="5" column="0">
+    <item row="9" column="0">
      <spacer name="verticalSpacer">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -116,8 +130,35 @@
       </property>
      </spacer>
     </item>
+    <item row="7" column="0">
+     <widget class="QListWidget" name="viewMemory"/>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Stored Memory Values (Click to Add to Input)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="clearInput">
+      <property name="text">
+       <string>Clear Input</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
+  <action name="actionCommands">
+   <property name="text">
+    <string>Commands</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

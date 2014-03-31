@@ -19,7 +19,9 @@ SOURCES += main.cpp\
 		api/aleks/add.cpp \
 		api/aleks/power.cpp \
 		api/aleks/signtoggle.cpp \
-		api/josh/circleEquation.cpp
+		api/josh/circleEquation.cpp \
+		api/andrew/memory.cpp \
+		api/andrew/modular.cpp
 
 HEADERS  += calculatorwindow.h \
 		api/tim/bitwise.h \
@@ -32,7 +34,9 @@ HEADERS  += calculatorwindow.h \
 		api/josh/circleEquation.h \
 		api/aleks/add.h \
 		api/aleks/power.h \
-		api/aleks/signtoggle.h
+		api/aleks/signtoggle.h \
+		api/andrew/memory.h \
+		api/andrew/modular.h
 
 FORMS += \
     calculatorwindow.ui

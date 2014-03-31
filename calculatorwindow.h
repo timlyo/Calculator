@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+#include <QListWidgetItem>
 
 #include "api/tim/input.h"
 #include "api/tim/strings.h"
@@ -22,10 +23,14 @@ public:
 
 private slots:
 	void on_inputBox_textEdited(const QString &arg1);
-	void on_memoryBox_clicked(const QModelIndex &index);
-	void on_saveButton_clicked();
 
-	void on_actionHelp_triggered();
+	void on_saveMemory_clicked();
+	void on_clearInput_clicked();
+	void on_clearMemory_clicked();
+	void on_listWidget_itemClicked(QListWidgetItem *item);
+	void on_viewMemory_itemClicked(QListWidgetItem *item);
+
+	void on_viewMemory_currentRowChanged(int currentRow);
 
 private:
 	Input input;
