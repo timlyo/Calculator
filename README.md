@@ -1,4 +1,3 @@
-Calculator
-==========
+Project for my group's first year calculator
 
-My first year calculator, group project
+Fun messy code :)
