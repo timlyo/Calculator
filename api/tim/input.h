@@ -7,6 +7,7 @@
 #include "api/josh/inversion.h"
 #include "api/aleks/add.h"
 #include "api/aleks/power.h"
+#include "api/andrew/modular.h"
 
 using std::vector;
 using std::string;
@@ -41,6 +42,7 @@ class Input{
 	inversionClass inversion;
 	Add add;
 	Power powerRanger;
+	Modular modular;
 public:
 	/**takes and input string and a vector, and returns a vector to the individual elements*/
 	vector<string> vectoriseInput(string input);

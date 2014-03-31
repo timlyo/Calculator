@@ -242,6 +242,13 @@ string Input::calculate(vector<string> input){
 			input.erase(input.begin() + highestOpPos);
 			input.erase(input.begin() + highestOpPos);
 		}
+		else if(input.at(highestOpPos).compare("%") == 0){
+			input.at(highestOpPos-1) = modular.calculation( std::stoi(input.at(highestOpPos-1)),
+															std::stoi(input.at(highestOpPos+1)));
+
+			input.erase(input.begin() + highestOpPos);
+			input.erase(input.begin() + highestOpPos);
+		}
 
 
 	}

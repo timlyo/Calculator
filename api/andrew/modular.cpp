@@ -1,9 +1,9 @@
 #include <iostream>
+#include <string>
 #include "modular.h"
 
-std::string modular::calculation(int value1, int value2)
-{
-    answer = value1 % value2;
-    return answer;
+std::string Modular::calculation(int value1, int value2){
+	int answer = value1 % value2;
+	return std::to_string(answer);
 }
 
