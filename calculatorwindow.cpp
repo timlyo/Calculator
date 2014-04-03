@@ -27,16 +27,11 @@ void CalculatorWindow::on_inputBox_textEdited(const QString &arg1){
 	std::string formattedString;
 	std::vector <std::string> inputList;
 
-	ui->progressBar->setValue(0);
-	ui->progressBar->setMaximum(3);
-
 	if(inputString.compare("\0") == 0)
 		ui->formatOutput->setText("Enter your equation above");
 	else{
 		inputList = input.vectoriseInput(inputString);
-		ui->progressBar->setValue(1);
 		inputList = input.formatInput(inputList);
-		ui->progressBar->setValue(2);
 
 		for(unsigned int i = 0; i < inputList.size(); i++){
 			if(input.valid(inputList.at(i)) != 1)
@@ -47,7 +42,6 @@ void CalculatorWindow::on_inputBox_textEdited(const QString &arg1){
 
 		formattedString.append(" = ");
 		answer = input.calculate(inputList);
-		ui->progressBar->setValue(3);
 		answer = input.formatOutput(answer);
 		formattedString.append(answer);
 
@@ -63,6 +57,7 @@ void CalculatorWindow::on_saveMemory_clicked(){
 
 void CalculatorWindow::on_clearInput_clicked(){
 	ui->inputBox->clear();
+	ui->formatOutput->setText("Enter your equation above");
 }
 
 void CalculatorWindow::on_clearMemory_clicked(){
@@ -72,9 +67,4 @@ void CalculatorWindow::on_clearMemory_clicked(){
 void CalculatorWindow::on_viewMemory_itemClicked(QListWidgetItem *item){
 	std::cout << "Click" << std::endl;
 	ui->inputBox->setText(ui->inputBox->text()+ ui->viewMemory->currentItem()->text());
-}
-
-void CalculatorWindow::on_viewMemory_currentRowChanged(int currentRow)
-{
-	std::cout << "Click" << std::endl;
 }
