@@ -69,7 +69,7 @@ public:
 	int getHighestPriorityOp(vector<string> input);
 	/**removes redundant parenthesis, operators, non valid characters and returns the modified vector*/
 	vector<string> validateInput(vector<string> input);
-	/**removes trailing 0's and returns modified string*/
+	/**Aesthetic changes, removes trailing 0's, adds commas*/
 	string formatOutput(string output);
 };
 #endif

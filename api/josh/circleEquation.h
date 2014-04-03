@@ -15,3 +15,19 @@ public:
 		pi = pi5;
 	}
 };
+
+class area: public circle{
+public:
+	float setArea(){
+		return pi * (d/2) * (d/2);
+	}
+};
+
+
+class circumference: public circle{
+public:
+	void operator=(float diameter);
+	float SetCircumference(){
+		return pi * d;
+	}
+};

@@ -19,9 +19,9 @@ public:
 	string toString();
 
 	//operators
-	char& operator[](int position);
+	char& operator[](signed int position);
 	char& operator[](unsigned int position);
-	void operator=(string newValue);
+	void  operator= (string newValue);
 };
 
 class BinaryNum: public BasicNumber{

@@ -12,6 +12,7 @@ Constants::Constants(){
 	constantsList.push_back(make_pair("c","299792458"));
 	constantsList.push_back(make_pair("pi","3.141592654"));
 	constantsList.push_back(make_pair("tau","6.283185307"));
+	constantsList.push_back(make_pair("life","42"));
 }
 
 bool Constants::isConstant(string constant){

@@ -150,7 +150,7 @@ string Input::calculate(vector<string> input){
 		std::cout << std::endl;
 
 
-		if(maxIterations == 0)
+		if(maxIterations <= 0)
 			break;
 		else
 			maxIterations--;
