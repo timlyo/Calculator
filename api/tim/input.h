@@ -57,10 +57,10 @@ public:
 	int getPriority(string input);
 
 	/**recursively gets a string of contigous digits from a string, modifies the pointer passed to it*/
-	void getNumber(string input, string *number, unsigned int position);
+	void getNumber_r(string input, string *number, unsigned int position);
 
 	/**recursively gets a string of contigous charcters from a string, modifies the pointer passed to it*/
-	void getWord(string input, string *word, unsigned int position);
+	void getWord_r(string input, string *word, unsigned int position);
 
 public:
 	/**The function that is responsible for calculating the final result*/
@@ -71,5 +71,7 @@ public:
 	vector<string> validateInput(vector<string> input);
 	/**Aesthetic changes, removes trailing 0's, adds commas*/
 	string formatOutput(string output);
+	/**Checks if the number of "(" is equal to the number of ")"*/
+	static bool bracketsEqual(vector<string> input);
 };
 #endif

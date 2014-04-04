@@ -37,11 +37,11 @@ vector<string> Input::vectoriseInput(string input){
 
 	for(unsigned int i = 0; i < input.size(); i++){
 		if(isdigit(input.at(i))){ //pull out numbers
-			getNumber(input, &tempString, i);
+			getNumber_r(input, &tempString, i);
 			std::cout << tempString << std::endl;
 			i += tempString.size() - 1;
 		}else if(isalpha(input.at(i))){//pull out words
-			getWord(input, &tempString, i);
+			getWord_r(input, &tempString, i);
 			i+= tempString.size() - 1;
 		}else{//pull out character
 			tempString.push_back(input.at(i));
@@ -122,20 +122,20 @@ int Input::getPriority(std::string input){
 	return -1;
 }
 
-void Input::getNumber(string input, string *number, unsigned int position){
+void Input::getNumber_r(string input, string *number, unsigned int position){
 	if(position < input.size()){
 		if(isdigit(input.at(position))){
 			number->push_back(input.at(position));
-			getNumber(input, number, ++position);
+			getNumber_r(input, number, ++position);
 		}
 	}
 }
 
-void Input::getWord(std::string input, std::string *word, unsigned int position){
+void Input::getWord_r(std::string input, std::string *word, unsigned int position){
 	if(position < input.size()){
 		if(isalpha(input.at(position))){
 			word->push_back(input.at(position));
-			getWord(input, word, ++position);
+			getWord_r(input, word, ++position);
 		}
 	}
 }
@@ -237,7 +237,7 @@ string Input::calculate(vector<string> input){
 		}
 		else if(input.at(highestOpPos).compare(">&") == 0){
 			input.at(highestOpPos-1) = bitwise.rotateRight(BinaryNum::fromOther(input.at(highestOpPos-1)),
-															   stoi(input.at(highestOpPos+1)));
+														   stoi(input.at(highestOpPos+1)));
 
 			input.erase(input.begin() + highestOpPos);
 			input.erase(input.begin() + highestOpPos);
@@ -309,8 +309,10 @@ vector<string> Input::validateInput(vector<std::string> input){
 					input.erase(input.begin()+i+1);
 				}
 				else if(input[i+1].compare("&") == 0){
-					input[i].push_back('&');
-					input.erase(input.begin()+i+1);
+					if(Input::bracketsEqual(input)){
+						input[i].push_back('&');
+						input.erase(input.begin()+i+1);
+					}
 				}
 			}
 		}
@@ -387,3 +389,23 @@ string Input::formatOutput(std::string input){
 	return input;
 
 }
+
+bool Input::bracketsEqual(vector<string> input){
+	int openBrackets = 0;
+	int closedBrackets = 0;
+	for(unsigned int i = 0; i < input.size(); i++){
+		if(input[i].front() == '(')
+			openBrackets++;
+		else if(input[i].front() == ')')
+			closedBrackets++;
+	}
+	if(openBrackets == closedBrackets)
+		return true;
+	else
+		return false;
+}
+
+
+
+
+
