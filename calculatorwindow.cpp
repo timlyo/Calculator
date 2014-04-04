@@ -5,6 +5,7 @@
 
 #include "calculatorwindow.h"
 #include "ui_calculatorwindow.h"
+#include "helpwindow.h"
 
 #include "api/tim/input.h"
 #include "api/tim/strings.h"
@@ -67,4 +68,12 @@ void CalculatorWindow::on_clearMemory_clicked(){
 void CalculatorWindow::on_viewMemory_itemClicked(QListWidgetItem *item){
 	std::cout << "Click" << std::endl;
 	ui->inputBox->setText(ui->inputBox->text()+ ui->viewMemory->currentItem()->text());
+}
+
+void CalculatorWindow::on_actionCommand_triggered(){
+	helpWindow.show();
+}
+
+void CalculatorWindow::on_actionAbout_triggered(){
+	aboutWindow.show();
 }

@@ -5,6 +5,9 @@
 #include "api/tim/input.h"
 #include "api/tim/strings.h"
 
+#include "helpwindow.h"
+#include "aboutwindow.h"
+
 #ifndef CALCULATORWINDOW_H
 #define CALCULATORWINDOW_H
 
@@ -32,10 +35,17 @@ private slots:
 
 	void on_viewMemory_currentRowChanged(int currentRow);
 
+	void on_actionCommand_triggered();
+
+	void on_actionAbout_triggered();
+
 private:
 	Input input;
     Ui::CalculatorWindow *ui;
 	std::string answer;
+
+	HelpWindow helpWindow;
+	AboutWindow aboutWindow;
 };
 
 #endif // CALCULATORWINDOW_H
